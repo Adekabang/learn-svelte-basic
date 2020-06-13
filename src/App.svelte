@@ -37,7 +37,8 @@
 	{:else}
 	<h2>Loading...</h2>
 	{/if}
-		
+	
+	<Button title={'Toggle'} on:click={ () => (isLoaded = !isLoaded)}/>
 </div>
 
 <svelte:head>

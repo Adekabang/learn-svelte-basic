@@ -1,4 +1,5 @@
 <script>
+import { onMount, onDestroy, beforeUpdate, afterUpdate } from 'svelte'
   let description = '';
   $: characters = description.length;
   $: words = description.split(' ').length;
@@ -7,6 +8,19 @@
     console.log('form submitted, thanks!');
     description = ''
   }
+
+  onMount(function () {
+    console.log('onMount')
+  })
+  onDestroy(function () {
+    console.log('onDestroy')
+  })
+  beforeUpdate(function () {
+    console.log('beforeUpdate')
+  })
+  afterUpdate(function () {
+    console.log('afterUpdate')
+  })
 </script>
 
 <style>
