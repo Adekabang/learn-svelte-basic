@@ -1,6 +1,7 @@
 <script>
 	import EmojiDisplay from './EmojiDisplay.svelte';
 	import EmojiDescription from './EmojiDescription.svelte';
+	import Button from './Button.svelte';
 
 	let isLoaded = false;
 	let currentEmoji = '😊'
@@ -25,7 +26,7 @@
 	{#if isLoaded === true}
 	<EmojiDisplay {currentEmoji}/>
 	<EmojiDescription/>
-	<button class="btn btn-primary" on:click={handleRandomButton}>🔁 randomizer</button>
+	<Button on:click={handleRandomButton} title={'🔁 randomizer'}/>
 	{:else}
 	<h2>Loading...</h2>
 	{/if}
