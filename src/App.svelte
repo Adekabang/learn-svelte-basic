@@ -6,6 +6,7 @@
 	let isLoaded = false;
 	let currentEmoji = '😊'
 	const emojis = ['😊','🚥','🔥','🙏','🐱‍🐉','🐱','🦊','📦','💕'];
+	let m = { x: 0, y:0}
 	function randomizeEmoji () {
 		return emojis[Math.floor(Math.random() * emojis.length)];
 	}
@@ -16,9 +17,15 @@
 	setTimeout( () => {
 		isLoaded = true;
 	}, 2500)
+
+	function handleMouseMove(event) {
+		m.x = event.clientX;
+		m.y = event.clientY;
+	}
 </script>
 
-<div class="container">
+<div class="container" on:mousemove={handleMouseMove}>
+	<p>The mouse position: {m.x} x {m.y}</p>
 	<h1>Randomizer Emoji</h1>
 	{#each emojis as emoji}
 		<li>{emoji}</li>
