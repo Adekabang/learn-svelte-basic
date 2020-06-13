@@ -2,6 +2,7 @@
 	import EmojiDisplay from './EmojiDisplay.svelte';
 	import EmojiDescription from './EmojiDescription.svelte';
 	import Button from './Button.svelte';
+	import { fade, fly } from 'svelte/transition';
 
 	let isLoaded = false;
 	let currentEmoji = '😊'
@@ -31,11 +32,13 @@
 		<li>{emoji}</li>
 	{/each}
 	{#if isLoaded === true}
-	<EmojiDisplay {currentEmoji}/>
-	<EmojiDescription/>
-	<Button on:click|once={handleRandomButton} title={'🔁 randomizer'}/>
+		<div  in:fly={{ y: 200, duration: 2000}} out:fade>
+			<EmojiDisplay {currentEmoji}/>
+			<EmojiDescription/>
+			<Button on:click|once={handleRandomButton} title={'🔁 randomizer'}/>
+		</div>
 	{:else}
-	<h2>Loading...</h2>
+		<h2>Loading...</h2>
 	{/if}
 	
 	<Button title={'Toggle'} on:click={ () => (isLoaded = !isLoaded)}/>
