@@ -32,6 +32,9 @@
 		
 </div>
 
+<svelte:head>
+	<link rel="stylesheet" href="/style.css">
+</svelte:head>
 <style>
 	button {
 		background-color: #8bd3dd;
