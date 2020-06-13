@@ -19,6 +19,9 @@
 
 <div>
 	<h1>Randomizer Emoji</h1>
+	{#each emojis as emoji}
+		<li>{emoji}</li>
+	{/each}
 	{#if isLoaded === true}
 	<EmojiDisplay {currentEmoji}/>
 	<EmojiDescription/>
