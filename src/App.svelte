@@ -4,7 +4,9 @@
 
 <div>
 	<h1>Randomizer Emoji</h1>
-	<EmojiDisplay />
+	<EmojiDisplay emoji={'😊'}/>
+	<EmojiDisplay emoji={'🦊'}/>
+	<EmojiDisplay emoji={'🐱'}/>
 	<button>🔁 randomizer</button>
 </div>
 
