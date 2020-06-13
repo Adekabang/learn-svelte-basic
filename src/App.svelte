@@ -1,5 +1,6 @@
 <script>
 	import EmojiDisplay from './EmojiDisplay.svelte';
+	import EmojiDescription from './EmojiDescription.svelte';
 	let currentEmoji = '😊'
 	const emojis = ['😊','🚥','🔥','🙏','🐱‍🐉','🐱','🦊','📦','💕'];
 	function randomizeEmoji () {
@@ -13,6 +14,7 @@
 <div>
 	<h1>Randomizer Emoji</h1>
 	<EmojiDisplay {currentEmoji}/>
+	<EmojiDescription/>
 	<button on:click={handleRandomButton}>🔁 randomizer</button>
 </div>
 
