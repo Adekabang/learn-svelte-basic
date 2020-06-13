@@ -33,7 +33,7 @@
 	{#if isLoaded === true}
 	<EmojiDisplay {currentEmoji}/>
 	<EmojiDescription/>
-	<Button on:click={handleRandomButton} title={'🔁 randomizer'}/>
+	<Button on:click|once={handleRandomButton} title={'🔁 randomizer'}/>
 	{:else}
 	<h2>Loading...</h2>
 	{/if}
