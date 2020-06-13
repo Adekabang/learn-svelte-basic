@@ -1,9 +1,5 @@
 <script>
-  export let emoji;
-	let currentEmoji = emoji;
-	setTimeout(() => {
-		currentEmoji = '😢'
-	}, 1000);
+  export let currentEmoji;
 </script>
 
 <style>

@@ -1,13 +1,19 @@
 <script>
 	import EmojiDisplay from './EmojiDisplay.svelte';
+	let currentEmoji = '😊'
+	const emojis = ['😊','🚥','🔥','🙏','🐱‍🐉','🐱','🦊','📦','💕'];
+	function randomizeEmoji () {
+		return emojis[Math.floor(Math.random() * emojis.length)];
+	}
+	function handleRandomButton() {
+		currentEmoji = randomizeEmoji()
+	}
 </script>
 
 <div>
 	<h1>Randomizer Emoji</h1>
-	<EmojiDisplay emoji={'😊'}/>
-	<EmojiDisplay emoji={'🦊'}/>
-	<EmojiDisplay emoji={'🐱'}/>
-	<button>🔁 randomizer</button>
+	<EmojiDisplay {currentEmoji}/>
+	<button on:click={handleRandomButton}>🔁 randomizer</button>
 </div>
 
 <style>
